@@ -85,24 +85,6 @@ h2 {
   color: #555;
 }
 
-.slideshow {
-  max-width: 900px;
-  margin: 30px auto;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.slideshow img {
-  width: 100%;
-  display: none;
-}
-
-.slideshow img.active {
-  display: block;
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -271,17 +253,6 @@ footer {
 <footer>
   © Del’s Garage
 </footer>
-
-<script>
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slideshow img");
-
-setInterval(() => {
-  slides[slideIndex].classList.remove("active");
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add("active");
-}, 3000);
-</script>
 
 </body>
 </html>
