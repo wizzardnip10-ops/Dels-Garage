@@ -1,93 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My GitHub Page</title>
-    <style>
-      :root {
-        --colorRgbFacetsTeal600: 2 128 125;
-        --colorTealAction: var(--colorRgbFacetsTeal600);
-        --colorRgbFacetsNeutralLight200: 233 235 237;
-        --colorHr: var(--colorRgbFacetsNeutralLight200);
-        --colorRgbFacetsNeutralLight700: 53 58 62;
-        --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
-        --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
-        --colorText: var(--colorGrayDarkest);
-        --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);
-        --colorRgbFacetsNeutralDark900: 6 11 16;
-      }
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        background: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: rgb(var(--colorText));
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Del’s Garage</title>
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: rgb(var(--colorRgbFacetsNeutralDark900));
-        }
-      }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #eee;
+    }
 
-      h1 {
-        margin: 0;
-        font-size: 1.375rem;
-        line-height: 1;
-      }
+    header {
+      background: #000;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 3px solid #e10600;
+    }
 
-      h1 + p {
-        margin-top: 8px;
-      }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
 
-      .main {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-      }
+    header p {
+      margin-top: 10px;
+      color: #aaa;
+    }
 
-      .card {
-        position: relative;
-        width: 75%;
-        max-width: 364px;
-        padding: 24px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: var(--effectShadowLightShallow);
-        border: 1px solid rgb(var(--colorGrayLighter));
-      }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-      p:last-of-type {
-        margin-bottom: 0;
-      }
+    h2 {
+      border-left: 5px solid #e10600;
+      padding-left: 15px;
+      margin-bottom: 20px;
+    }
 
-      hr {
-        border: 0;
-        height: 1px;
-        background: rgb(var(--colorHr));
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="card">
-        <h1>Welcome to My GitHub Page</h1>
-        <p>This is a simple HTML page hosted on GitHub Pages.</p>
-        <hr />
-        <p>You can edit this page by updating the <code>index.html</code> file in your repository.</p>
-      </div>
-    </div>
-  </body>
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #333;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    a {
+      color: #e10600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Del’s Garage</h1>
+  <p>Performance • Maintenance • Repairs</p>
+</header>
+
+<section>
+  <h2>About Us</h2>
+  <p>
+    Del’s Garage is a no-nonsense independent garage specialising in vehicle
+    servicing, repairs, diagnostics and performance work.
+    Built by enthusiasts, for enthusiasts.
+  </p>
+</section>
+
+<section>
+  <h2>Services</h2>
+  <div class="services">
+    <div class="service">General Servicing</div>
+    <div class="service">Diagnostics & Fault Finding</div>
+    <div class="service">Brakes & Suspension</div>
+    <div class="service">Clutches & Gearboxes</div>
+    <div class="service">Performance Upgrades</div>
+    <div class="service">Custom Work</div>
+  </div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>
+    📍 Location: Your town here<br>
+    📞 Phone: 07xxx xxxxxx<br>
+    📧 Email: info@delsgarage.co.uk
+  </p>
+</section>
+
+<footer>
+  © 2026 Del’s Garage — All rights reserved
+</footer>
+
+</body>
 </html>
