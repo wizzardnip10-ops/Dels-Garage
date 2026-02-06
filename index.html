@@ -78,7 +78,50 @@ h2 {
   color: #0f4c8a;
 }
 
-/* HOURS + CONTACT */
+/* GALLERY + SLIDESHOW */
+.gallery-note {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.slideshow {
+  max-width: 900px;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slideshow img {
+  width: 100%;
+  display: none;
+}
+
+.slideshow img.active {
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* BOXES */
 .box {
   background: white;
   border-radius: 10px;
@@ -125,14 +168,13 @@ footer {
 <section>
   <h2>About Us</h2>
   <p>
-   Del's Garage is a trusted local garage based in Llanfyllin, 
-    offering honest, reliable vehicle servicing and repairs. 
-    No nonsense, no upselling — just proper work done right. 
+    Del’s Garage is a trusted local garage offering honest, reliable vehicle
+    servicing and repairs. No nonsense, no upselling — just proper work.
   </p>
   <p>
-    We’re passionate about cars, not just working on them. From daily drivers to
-    enthusiast vehicles, we take pride in doing the job properly and treating
-    every car as if it were our own.
+    We’re passionate about cars, not just working on them. These vehicles below
+    are our own personal cars and projects — proof that we live and breathe
+    what we do.
   </p>
 </section>
 
@@ -173,6 +215,37 @@ footer {
 </section>
 
 <section>
+  <h2>Our Work</h2>
+
+  <p class="gallery-note">
+    These vehicles are our own personal cars and projects.
+    We don’t just work on cars — we live and breathe them.
+  </p>
+
+  <div class="slideshow">
+    <img src="work1.jpg" class="active">
+    <img src="work2.jpg">
+    <img src="work3.jpg">
+    <img src="work4.jpg">
+    <img src="work5.jpg">
+    <img src="work6.jpg">
+    <img src="work7.jpg">
+    <img src="work8.jpg">
+  </div>
+
+  <div class="gallery">
+    <img src="work1.jpg">
+    <img src="work2.jpg">
+    <img src="work3.jpg">
+    <img src="work4.jpg">
+    <img src="work5.jpg">
+    <img src="work6.jpg">
+    <img src="work7.jpg">
+    <img src="work8.jpg">
+  </div>
+</section>
+
+<section>
   <h2>Opening Hours</h2>
   <div class="box">
     <p><strong>Monday – Friday:</strong> 8:30am – 5:30pm</p>
@@ -198,7 +271,6 @@ footer {
       <a href="mailto:delsgarage7@gmail.com">delsgarage7@gmail.com</a></p>
     </div>
 
-
     <div class="contact-box">
       <h3>Ready to book?</h3>
       <p>Give us a ring and we’ll get you sorted.</p>
@@ -210,6 +282,17 @@ footer {
 <footer>
   © Del’s Garage
 </footer>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slideshow img");
+
+setInterval(() => {
+  slides[slideIndex].classList.remove("active");
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add("active");
+}, 3000);
+</script>
 
 </body>
 </html>
